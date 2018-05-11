@@ -1,0 +1,9 @@
+<settings>
+	<url>http://localhost:4444/wd/hub</url>
+	<capabilities>
+	   <browserName>firefox</browserName>
+      <marionette>true</marionette>
+      <platform>LINUX</platform>
+      <!-- <moz:firefoxOptions>{args: ['-headless']}</moz:firefoxOptions> -->
+	</capabilities>
+</settings>

@@ -1,0 +1,27 @@
+<definitions>
+	<configurationGroup groupName ="desktop" configurationsNames ="firefox, chrome"/>
+   
+   <ChromeOptions name="ChromeOptions">
+		<argument>ignore-ssl-errors</argument>
+      <argument>disable-infobars</argument>
+	</ChromeOptions>
+   
+   <configuration name="chrome">
+      <applitools>/Users/justin/repos/applitools/ASTR/selenium-grid/configs/chrome/applitoolsConf.xml</applitools>
+      <driver>/Users/justin/repos/applitools/ASTR/selenium-grid/configs/chrome/driverConfig.xml</driver>
+      <viewport width="1200" height="700" />
+      <!-- <viewport width="925" height="700" />
+      <viewport width="723" height="700" />
+      <viewport width="446" height="700" /> -->
+   </configuration>
+   
+   <FirefoxOptions name="FirefoxOptions">
+		<argument>headless</argument>
+	</FirefoxOptions>
+   
+   <configuration name="firefox">
+      <applitools>/Users/justin/repos/applitools/ASTR/selenium-grid/configs/firefox/applitoolsConf.xml</applitools>
+      <driver>/Users/justin/repos/applitools/ASTR/selenium-grid/configs/firefox/driverConfig.xml</driver>
+      <!-- <viewport width="1200" height="700" /> -->
+   </configuration>
+</definitions>

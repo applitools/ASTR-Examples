@@ -1,0 +1,19 @@
+<job concurrent_runs="1">
+   <load>/Users/justin/repos/applitools/ASTR/selenium-grid/configs/configurations.xml</load>
+	<batch name="Apple">
+		<test appname="apple.com" testname="Crawl Apple Sitemap">
+			<configurations names="firefox" />
+			<SmartSplit to="sitemap url groups" max="100" path="../../sitemap.xml" maxAttempts="5"/>
+			<execute>
+				<action type="crawl" from="sitemap.xml file" createSeparateTests="true" path="../../sitemap.xml">
+   				<foreach>
+                  <action type="function-addPrefix" prefix="" to="exp[%url%]" OutputVariable="url" />
+                  <action type="navigate" onError="skipIteration">exp[%url%]</action>
+                  <!-- <action type="forcepageload" /> -->
+                  <action type="checkWindow" onError="skipIteration">exp[%url%]</action>
+   				</foreach>
+            </action>
+			</execute>
+		</test>
+	</batch>
+</job>
